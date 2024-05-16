@@ -15,35 +15,59 @@ function CardBox({ todos, setTodos }) {
 
   return (
     <>
-      <div id="card-container-working">
-        <h2>Working</h2>
-        <ul>
-          {workingTodos.map((todo) => (
-            <li class="todo-li" key={todo.id}>
-              <p>{todo.title}</p>
-              <p>{todo.body}</p>
-              <div>
-                <button onClick={() => removeCard(todo.id)}>삭제하기</button>
-                <button onClick={() => updateIsDone(todo.id)}>완료</button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div id="card-container-done">
-        <h2>Done</h2>
-        <ul>
-          {doneTodos.map((todo) => (
-            <li class="todo-li" key={todo.id}>
-              <p>{todo.title}</p>
-              <p>{todo.body}</p>
-              <div>
-                <button onClick={() => removeCard(todo.id)}>삭제하기</button>
-                <button onClick={() => updateIsDone(todo.id)}>취소</button>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div id="cards-container">
+        <div id="cards-working">
+          <h2>Working🚴🏻‍♀️✍🏻</h2>
+          <ul class="todo-ul">
+            {workingTodos.map((todo) => (
+              <li class="todo-li working-li" key={todo.id}>
+                <div>
+                  <p class="todo-title">{todo.title}</p>
+                  <p class="todo-body">{todo.body}</p>
+                </div>
+                <div class="buttons">
+                  <button
+                    class="card-btn btn-delete"
+                    onClick={() => removeCard(todo.id)}
+                  >
+                    삭제하기
+                  </button>
+                  <button
+                    class="card-btn btn-to-done"
+                    onClick={() => updateIsDone(todo.id)}
+                  >
+                    완료
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div id="cards-done">
+          <h2>Done✨🎉</h2>
+          <ul class="todo-ul">
+            {doneTodos.map((todo) => (
+              <li class="todo-li done-li" key={todo.id}>
+                <p class="todo-title">{todo.title}</p>
+                <p class="todo-body">{todo.body}</p>
+                <div class="buttons">
+                  <button
+                    class="card-btn btn-delete"
+                    onClick={() => removeCard(todo.id)}
+                  >
+                    삭제하기
+                  </button>
+                  <button
+                    class="card-btn btn-to-working"
+                    onClick={() => updateIsDone(todo.id)}
+                  >
+                    취소
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </>
   );

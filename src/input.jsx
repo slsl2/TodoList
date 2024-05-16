@@ -4,7 +4,7 @@ import { useState } from "react";
 function InputBox({ setTodos }) {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [isDone, setIsDone] = useState(false);
+  const isDone = false;
 
   const handleInputTitle = (event) => {
     setTitle(event.target.value);
@@ -29,14 +29,16 @@ function InputBox({ setTodos }) {
 
   return (
     <>
-      <div>
-        <form onSubmit={addCard}>
-          <div>
+      <div id="input-containter">
+        <form id="todo-form" onSubmit={addCard}>
+          <div id="input-line">
+            <span>제목</span>
             <input
               type="text"
               onChange={handleInputTitle}
               value={title}
             ></input>
+            <span>내용</span>
             <input type="text" onChange={handleInputBody} value={body}></input>
           </div>
           <button type="submit">추가하기</button>

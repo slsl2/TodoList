@@ -1,42 +1,169 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+@import "reset.css";
+
+/* css 초기 세팅 */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+input:focus,
+textarea,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+html {
+  font-size: 62.5%; /* 1rem을 10px로 변환 (원래는 16px) */
+}
+
+body {
+  font-size: 2rem;
+  max-width: 1200px;
+  min-width: 880px;
+  display: flex;
+  justify-content: center;
+}
+
+/* header.jsx */
+
+.header {
+  display: flex;
+  justify-content: space-between;
   padding: 2rem;
-  text-align: center;
+  background-color: #ffffff;
+  color: #272727;
+  font-weight: 600;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* input.jsx */
+#input-containter {
+  margin: 2rem;
+  background-color: #272727;
+  padding: 2rem;
+  border-radius: 10px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#todo-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+#input-line {
+  display: flex;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+#todo-form span {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+#todo-form input {
+  width: 20rem;
+  height: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-right: 3rem;
+}
+
+#todo-form button {
+  width: 10rem;
+  height: 4rem;
+  border-radius: 10px;
+  background-color: #494949;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#cards-container {
+  margin: 2rem;
+}
+
+#cards-container h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5rem 1rem 2rem 1rem;
+}
+
+.todo-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo-li {
+  width: 24rem;
+  min-height: 14rem;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  color: #272727;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.working-li {
+  border: 5px solid #11542e;
+  background-color: #fff;
+}
+
+.done-li {
+  border: 5px solid #273c90;
+  background-color: #fff;
+}
+
+.todo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.todo-body {
+  font-size: 1.3rem;
+  line-height: 150%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.card-btn {
+  background-color: #fff;
+  color: #fff;
+  font-size: 1.1rem;
+  width: 8rem;
+  height: 3.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-delete {
+  margin-right: 1rem;
+  background-color: #a82929;
+}
+
+.btn-to-done {
+  background-color: #11542e;
+}
+
+.btn-to-working {
+  background-color: #273c90;
+}
+
+button:hover {
+  cursor: pointer;
 }
