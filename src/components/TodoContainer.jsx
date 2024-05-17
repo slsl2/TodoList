@@ -3,6 +3,9 @@ import TodoItem from "./TodoItem";
 
 function CardBox({ todos, setTodos }) {
   const removeCard = (id) => {
+    if (!confirm("정말로 삭제하시겠습니다?")) {
+      return false;
+    }
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   const updateIsDone = (id) => {
