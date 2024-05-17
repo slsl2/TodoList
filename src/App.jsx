@@ -1,16 +1,21 @@
 import { useState } from "react";
-import Header from "./header.jsx";
-import InputBox from "./input.jsx";
-import CardBox from "./card.jsx";
+import Layout from "./components/Layout.jsx";
+import Header from "./components/Header.jsx";
+import InputBox from "./components/TodoForm.jsx";
+import CardBox from "./components/TodoContainer.jsx";
 import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
   return (
     <>
-      <Header />
-      <InputBox setTodos={setTodos} />
-      <CardBox todos={todos} setTodos={setTodos} />
+      <main>
+        <Layout>
+          <Header />
+          <InputBox setTodos={setTodos} />
+          <CardBox todos={todos} setTodos={setTodos} />
+        </Layout>
+      </main>
     </>
   );
 }

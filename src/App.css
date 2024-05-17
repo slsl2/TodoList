@@ -20,12 +20,11 @@ html {
   font-size: 62.5%; /* 1rem을 10px로 변환 (원래는 16px) */
 }
 
-body {
+.layout {
   font-size: 2rem;
   max-width: 1200px;
   min-width: 880px;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto; /* 왼쪽 오른쪽 margin이 동일해짐 */
 }
 
 /* header.jsx */

@@ -15,8 +15,8 @@ function InputBox({ setTodos }) {
 
   const addCard = (e) => {
     e.preventDefault();
-    if (!title || !body) {
-      alert("모두 입력해주세요");
+    if (!title.trim || !body.trim) { // trim : 시작하는 곳과 끝나는 곳에 공백 문자를 제거
+      alert("제목과 내용을 모두 입력해주세요");
       return;
     }
     setTodos((todos) => [
